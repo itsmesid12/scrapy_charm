@@ -22,19 +22,17 @@ class midshptspider(scrapy.Spider):
 
             if stock[i] == "Out of Stock":
                 det = {
-                    'sno': i,
-                    'doller': doller[i],
+                    'price': doller[i],
                     'title': title[i],
-                    'Brand': brand[i],
-                    'Stock': False,
+                    'stock': False,
+                    'maftr': brand[i],
                 }
             else:
                 det = {
-                    'sno': i,
-                    'doller': doller[i],
+                    'price': doller[i],
                     'title': title[i],
-                    'Brand': brand[i],
-                    'Stock': True,
+                    'stock': True,
+                    'maftr': brand[i],
                 }
             yield det
         
